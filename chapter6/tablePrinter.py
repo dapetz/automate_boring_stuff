@@ -6,16 +6,16 @@ tableData = [['apples', 'oranges', 'cherries', 'banana'],
              ['dogs', 'cats', 'moose', 'goose']]
 
 def printTable(data):
-    colWidths = [0] * len(data)     #create list to store len values
-    for i in colWidths:
-        colWidths = len(max(data[i], key=len))
-        
+    colWidths = []     
+    maxWidth = 0
+    for i in range(len(data)):      #find the max column length for each row
+        colWidths.append(len(max(data[i], key=len)))
+    maxWidth = max(colWidths)       #find the max column length across all rows
     
-    for r in range(len(data[0])):
+    for r in range(len(data[0])):   #pass the max column length to the rjust method
         print()
         for c in range(len(data)):
-            print(data[c][r].rjust(colWidths), end='')
-            
+            print(data[c][r].rjust(maxWidth), end='')
     return data
 
 printTable(tableData)
