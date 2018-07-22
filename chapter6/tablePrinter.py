@@ -1,4 +1,4 @@
-#Automate the Boring Stuff with Python - Chapter 4
+#Automate the Boring Stuff with Python - Chapter 6
 #Table Print practice program
 
 tableData = [['apples', 'oranges', 'cherries', 'banana'],
